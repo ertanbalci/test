@@ -1,0 +1,55 @@
+﻿<html><head> </head> <body> 
+
+<form action=""  method="POST">
+
+ {{ form.csrf_token }} <center>
+
+ {% for message in get_flashed_messages() %}
+
+       		<h3> <font color="red"> {{ message }} </font> </h3>
+
+ {% endfor %}
+
+ <table border=".5" bgcolor="#FDFEFE" bordercolor="#EBE6F1" cellspacing="5" cellpadding="10">
+
+ <tr><td colspan="2" align="center"><b><font color="red">YENİ KAYIT FORMU</b></h3></td></tr>
+
+   <tr> <td>  {{ form.username.label }} <br> {{ form.username }}
+
+       	      {% for error in form.username.errors %}
+
+     			<br> <font color="red"> {{ error }} </font>
+
+     	      {% endfor %} </td> </tr>
+
+   <tr> <td>  {{ form.eposta.label }}<br>{{ form.eposta }}
+
+     	      {% for error in form.eposta.errors %}
+
+   		        <br> <font color="red"> {{ error }} </font>
+
+	      {% endfor %} </td>	</tr>
+
+   <tr> <td>  {{ form.parola.label }}<br>{{ form.parola }}
+
+              {% for error in form.parola.errors %}
+
+              		<br> <font color="red"> {{ error }} </font>
+
+   	      {% endfor %} </td> </tr>
+
+   <tr> <td>  {{ form.cparola.label }}<br>{{ form.cparola }}
+
+	      {% for error in form.cparola.errors %}
+
+       			<br> <font color="red"> {{ error }} </font>
+
+              {% endfor %} </td> </tr>
+
+   <tr> <td align="center"> {{ form.submit }} </td> </tr>
+
+ </table> </form>
+
+ <h3><a href = "{{url_for('index') }}">Ana Sayfa</a></h3>
+
+<center>  </body> </html>

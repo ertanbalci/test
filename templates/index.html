@@ -1,0 +1,23 @@
+﻿
+<h3>Ana Sayfa</h3>
+
+{% if current_user.is_authenticated %} </h3>
+
+  <h3>Hoşgeldiniz {{ current_user.username }}.Oturum başlattınız.  </h3>
+
+  <h3>Üyeler sayfasına gitmek için <a href = "{{url_for('members') }}">tıklayın.</a> </h3>
+
+  <h3>Oturumu sonlandırmak (logout) için <a href = "{{url_for('logout') }}">tıklayın.</a> </h3>
+
+  <h3>Yeni Üyelik hesabı oluşturmak için <a href = "{{url_for('new_account') }}">tıklayın.</a> </h3>
+
+{% else %}
+
+  <h3>Hoşgeldin Misafir </h3>
+
+  <h3>Üye girişi için <a href = "{{url_for('login') }}">tıklayın.</a></h3>
+
+  <h3>Üye olmak için hesap <a href = "{{url_for('new_account') }}">oluşturun.</a></h3>
+
+{% endif %}
+

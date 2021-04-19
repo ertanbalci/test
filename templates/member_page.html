@@ -1,0 +1,16 @@
+﻿<h3>Hoşgeldiniz {{ current_user.username }}
+
+<br><br>ÜYELERİMİZ<br>
+<ul>
+
+{% for mem in mems %}
+
+	<li> {{ mem.username}}  ({{ mem.eposta }})</li><br>
+
+{% endfor %}
+
+</ul> 
+
+<a href="{{ url_for('index')}}">Ana sayfa</a><br><br>
+
+<a href="{{ url_for('logout')}}">Çıkış</a></h3>
